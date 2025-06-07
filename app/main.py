@@ -4,6 +4,8 @@ from .users import auth_backend, fastapi_users, AUTH_URL_PATH
 from fastapi.middleware.cors import CORSMiddleware
 from .utils import simple_generate_unique_route_id
 from app.routes.items import router as items_router
+from app.routes.posts import router as posts_router
+from app.routes.image import router as image_router
 from app.config import settings
 
 app = FastAPI(
@@ -49,3 +51,5 @@ app.include_router(
 
 # Include items routes
 app.include_router(items_router, prefix="/items")
+app.include_router(posts_router, prefix="/posts")
+app.include_router(image_router, prefix="/image")

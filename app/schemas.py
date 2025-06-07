@@ -32,3 +32,28 @@ class ItemRead(ItemBase):
     user_id: UUID
 
     model_config = {"from_attributes": True}
+
+
+class PostBase(BaseModel):
+    brandName: str
+    location: str
+    industry: str
+    websiteURL: str
+    # image: str | None = None
+
+class PostCreate(PostBase):
+    pass
+    
+class PostResponse(BaseModel):
+    id: str;
+    caption: str;
+    image_prompt: str;
+
+class PostRead(PostBase):
+    id: UUID
+    user_id: UUID
+
+
+class ImagePrompt(BaseModel):
+    imagePrompt: str
+    

@@ -38,6 +38,14 @@ class Settings(BaseSettings):
     # CORS
     CORS_ORIGINS: Set[str]
 
+    # Prediction API
+    PREDICTION_API_URL: str
+    PREDICTION_API_KEY: str
+
+    # Image gen API
+    IMAGE_GEN_API_URL: str
+    IMAGE_GEN_API_KEY: str
+
     model_config = SettingsConfigDict(
         env_file=".env", env_file_encoding="utf-8", extra="ignore"
     )
